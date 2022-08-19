@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import Button from "../Widgets/Button";
+import Link from "next/link";
 
 const ChooseUs = () => {
   return (
@@ -32,7 +33,7 @@ const ChooseUs = () => {
             Carthage Sky acheived ISO9001, ISO14001 & OHSAS 18001 certifications in February 2019.
           </p>
           <Button className=" bg-white/70 !py-4 !font-bold !text-primary-500 backdrop-blur hover:bg-primary-500 hover:!text-white">
-            See More
+            <Link href="/choose-us">See More</Link>
           </Button>
         </div>
         <Image src="/imgs/choose-us/airplane.webp" alt="Choose Us" width={352} height={352} />

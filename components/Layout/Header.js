@@ -46,7 +46,7 @@ const Header = () => {
       <div className="f-ai-c container justify-between gap-10 xl:gap-36">
         <Link href="/">
           <a>
-            <Logo />
+            <Logo fontSize="2em" />
           </a>
         </Link>
 
@@ -70,7 +70,7 @@ const Header = () => {
           </ul>
           <Button className="block lg:hidden ">
             <Link href="/inquiry">
-              <a className={`font-semibold ${router.pathname == "/careers" ? "active" : ""}`}>Send Inquiry</a>
+              <a className={`font-semibold ${router.pathname == "/inquirt" ? "active" : ""}`}>Send Inquiry</a>
             </Link>
           </Button>
         </nav>

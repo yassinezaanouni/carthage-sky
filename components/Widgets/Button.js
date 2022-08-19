@@ -1,4 +1,4 @@
-const Button = ({ className, children, isColorInverse, onClick }) => {
+const Button = ({ className, children, isColorInverse, onClick, type = "button" }) => {
   return (
     <button
       className={`${

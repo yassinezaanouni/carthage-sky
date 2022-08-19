@@ -1,9 +1,9 @@
 import SvgLogo from "../../public/svg-components/Logo";
 
-const Logo = ({ className }) => {
+const Logo = ({ className, fontSize }) => {
   return (
-    <div className={`f-ai-c font-semibold text-[15px] gap-2 ${className}`}>
-      <SvgLogo fontSize="2.5em" />
+    <div className={`f-ai-c gap-2 text-[15px] font-semibold ${className}`}>
+      <SvgLogo fontSize={fontSize} />
       <h2 className="max-w-[15ch]">Cartaghe Sky Services</h2>
     </div>
   );

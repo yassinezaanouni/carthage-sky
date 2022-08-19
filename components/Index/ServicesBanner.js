@@ -1,6 +1,7 @@
 import Button from "../Widgets/Button";
 import Image from "next/image";
 import { Parallax } from "react-scroll-parallax";
+import Link from "next/link";
 
 const ServicesBanner = ({ className }) => {
   return (
@@ -18,7 +19,7 @@ const ServicesBanner = ({ className }) => {
         effortless.
       </p>
       <Button className="bg-white !font-bold !text-primary-500 hover:bg-primary-500 hover:!text-white">
-        Explore More
+        <Link href="/services">Explore More</Link>
       </Button>
       <div className="absolute -bottom-2 -z-10">
         <Parallax translateX={["0px", "-60px"]}>

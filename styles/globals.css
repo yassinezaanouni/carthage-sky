@@ -11,6 +11,7 @@ body {
 }
 html {
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 :root {
@@ -53,6 +54,10 @@ a {
 
 section {
   @apply mt-20;
+}
+div.error-border,
+input.error-border {
+  border-color: rgb(212, 22, 22) !important;
 }
 
 .swiper1 {

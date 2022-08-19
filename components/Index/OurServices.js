@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import ServicesBanner from "./ServicesBanner";
 
 const OurServices = () => {
@@ -46,11 +47,13 @@ export default OurServices;
 
 export const ServicesItem = ({ index, title }) => {
   return (
-    <div className="group flex cursor-pointer flex-col items-center transition-all hover:text-primary-400">
-      <button className="f-ai-c aspect-square w-[6.25rem] justify-center rounded-[50%] border border-transparent bg-[#ECF4FF] p-2 duration-300 group-hover:border-primary-400">
-        <Image src={`/icons/services/${index}.png`} alt="" name="service" width={56} height={56} />
-      </button>
-      <h3 className="mt-3 text-lg">{title}</h3>
-    </div>
+    <Link href={`/services?selectedServiceIndex=${index}#services`}>
+      <div className="group flex cursor-pointer flex-col items-center transition-all hover:text-primary-400">
+        <button className="f-ai-c aspect-square w-[6.25rem] justify-center rounded-[50%] border border-transparent bg-[#ECF4FF] p-2 duration-300 group-hover:border-primary-400">
+          <Image src={`/icons/services/${index}.png`} alt="" name="service" width={56} height={56} />
+        </button>
+        <h3 className="mt-3 text-lg">{title}</h3>
+      </div>
+    </Link>
   );
 };

@@ -1,31 +1,35 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import Image from "next/image";
-
+import { useRouter } from "next/router";
 const CardsSelector = ({ items, iconFolder }) => {
-  const [selectedServiceIndex, setSelctedServiceIndex] = useState(0);
-  //   const [description, setDescription] = useState({ title: "Operating Permits", description: "" });
+  const router = useRouter();
+  const [selectedServiceIndex, setSelctedServiceIndex] = useState(Number(router.query.selectedServiceIndex) || 0);
+  const [description, setDescription] = useState({
+    title: "Occupational Health & Safety",
+    description: "",
+  });
   return (
     <div className="container">
       {/* <textarea
-    className="border-2"
-    name=""
-    id=""
-    cols="30"
-    rows="10"
-    onChange={(e) =>
-      setDescription((prev) => {
-        return { ...prev, description: e.target.value };
-      })
-    }
-  ></textarea>
-  <button
-    onClick={() => {
-      console.log(description);
-    }}
-  >
-    hello
-  </button> */}
+        className="border-2"
+        name=""
+        id=""
+        cols="30"
+        rows="10"
+        onChange={(e) =>
+          setDescription((prev) => {
+            return { ...prev, description: e.target.value };
+          })
+        }
+      ></textarea>
+      <button
+        onClick={() => {
+          console.log(description);
+        }}
+      >
+        hello
+      </button> */}
       <div
         className="grid gap-5"
         style={{
@@ -39,6 +43,7 @@ const CardsSelector = ({ items, iconFolder }) => {
             key={index}
             index={index + 1}
             onClick={() => setSelctedServiceIndex(index)}
+            isSelected={index === selectedServiceIndex}
           />
         ))}
       </div>
@@ -62,13 +67,17 @@ const CardsSelector = ({ items, iconFolder }) => {
 
 export default CardsSelector;
 
-export const Item = ({ iconFolder, index, title, onClick }) => {
+export const Item = ({ iconFolder, index, title, onClick, isSelected }) => {
   return (
     <div
       onClick={onClick}
       className="group flex cursor-pointer flex-col items-center transition-all hover:text-primary-400"
     >
-      <button className="f-ai-c h-[11rem] w-[11.75rem] justify-center rounded-lg border border-transparent bg-[#F5F5F5] p-2 duration-300 group-hover:border-primary-400 group-hover:bg-[#E8F2FF]">
+      <button
+        className={`f-ai-c h-[11rem] w-[11.75rem] justify-center rounded-lg border border-transparent bg-[#F5F5F5] p-2 group-hover:border-primary-400 group-hover:bg-[#E8F2FF] ${
+          isSelected ? "border-primary-400 bg-[#E8F2FF]" : ""
+        }`}
+      >
         <Image src={`/icons/${iconFolder}/${index}.png`} alt="" name="service" width={90} height={90} />
       </button>
       <h3 className="mt-3 text-lg">{title}</h3>
