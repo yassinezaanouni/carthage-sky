@@ -6,12 +6,12 @@ const AircraftsServices = () => {
     <section className="container text-center  text-dark-400 md:mt-[8.25rem]">
       <h2 className="text-3xl font-bold lg:text-5xl">Aircrafts We Service</h2>
       <p className="mx-auto mt-5 mb-14 max-w-3xl text-lg">
-        There's a wide variety of aircrafts that differ by type, weight components... We offer services to all of them
-        in different airports around the world
+        There&apos;s a wide variety of aircrafts that differ by type, weight components... We offer services to all of
+        them in different airports around the world
       </p>
       <div className="flex flex-wrap justify-center gap-x-5 gap-y-[22.1px]">
         {[1, 2, 3, 4, 5, 6, 7].map((_, index) => (
-          <CardBlurred index={index + 1} kye={index} />
+          <CardBlurred index={index + 1} key={index} />
         ))}
       </div>
     </section>

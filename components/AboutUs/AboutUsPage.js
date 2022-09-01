@@ -41,16 +41,16 @@ const AboutUsPage = () => {
         <div className="mt-10 flex flex-wrap justify-center gap-8 sm:flex-nowrap sm:justify-between md:mt-14">
           {/* Article Card */}
           <div className="cursor-pointer text-start">
-            <Image src="/imgs/about-us/article1.webp" alt="sky" width={604} height={471} />
+            <Image src="/imgs/about-us/article1.webp" alt="article" width={604} height={471} />
             <h3 className="mt-2 mb-2 max-w-[40ch] text-xl font-bold md:mt-7 md:text-3xl">
-              The SKY’s the limit for Carthage's planned FBO
+              The SKY&apos;s the limit for Carthage&apos;s planned FBO
             </h3>
             <p className="mt-1 text-lg opacity-70">Business Aviation / Features</p>
             <p className="mt-1 text-lg opacity-70">12 May 2020</p>
           </div>
           {/* Article Card */}
           <div className="cursor-pointer text-start">
-            <Image src="/imgs/about-us/article2.webp" alt="sky" width={604} height={471} />
+            <Image src="/imgs/about-us/article2.webp" alt="article" width={604} height={471} />
             <h3 className="mt-2 mb-2 max-w-[40ch] text-xl font-bold md:mt-7 md:text-3xl">
               Carthage Sky Services – Large enough to survive, but still small enough to care!
             </h3>
@@ -104,12 +104,12 @@ const AboutUsPage = () => {
 
         <div className="absolute bottom-10 right-0 translate-x-1/2">
           <Parallax translateX={["0px", "-80px"]} speed={2}>
-            <Image src="/imgs/about-us/plane2.webp" alt="" name="services-banner" width={630.36} height={286.48} />
+            <Image src="/imgs/about-us/plane2.webp" alt="" name="plane" width={630.36} height={286.48} />
           </Parallax>
         </div>
         <div className="absolute top-10 left-0  -translate-x-1/2">
           <Parallax translateX={["0px", "-80px"]} speed={2}>
-            <Image src="/imgs/about-us/plane2.webp" alt="" name="services-banner" width={324.12} height={147.26} />
+            <Image src="/imgs/about-us/plane2.webp" alt="" name="plane" width={324.12} height={147.26} />
           </Parallax>
         </div>
       </div>

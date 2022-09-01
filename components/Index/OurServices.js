@@ -21,7 +21,7 @@ const OurServices = () => {
       <div className=" ">
         <h2 className="text-3xl font-bold lg:text-5xl">Discover Our Services</h2>
         <p className="mx-auto mt-5 mb-14 max-w-4xl text-lg">
-          We're here to make your experience owning, operating and managing an aircraft easier. We take care of the
+          We&apos;re here to make your experience owning, operating and managing an aircraft easier. We take care of the
           process and deliver cost-effective service so you can enjoy the benefits. You can expect full service for a
           smooth journey.
         </p>

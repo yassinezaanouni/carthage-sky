@@ -53,7 +53,7 @@ const Form5 = ({ state, setState, setInfo }) => {
             }}
           />
           <label htmlFor="agree1">
-            I acknowledge that all sales are subject to CARTHAGE SKY's{" "}
+            I acknowledge that all sales are subject to CARTHAGE SKY&apos;s{" "}
             <Link href="#">
               <a className="text-[#0012FF] underline">General Terms and Conditions</a>
             </Link>

@@ -32,7 +32,11 @@ const Item = ({ title, value, state }) => {
             : " border-[#707070] text-black"
         }`}
       >
-        {isDone == 1 ? <Image src="/icons/inquiry/check.svg" width={21.22} height={13.63} layout="fixed" /> : value}
+        {isDone == 1 ? (
+          <Image src="/icons/inquiry/check.svg" width={21.22} height={13.63} alt="" layout="fixed" />
+        ) : (
+          value
+        )}
       </div>
 
       <label className="text-sm lg:text-base lg:text-lg">{title}</label>

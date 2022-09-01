@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const FinalStep = () => {
   return (
@@ -7,7 +8,9 @@ const FinalStep = () => {
       <p className="mt-3 mb-6 text-lg md:mt-4 md:mb-8">
         We will get back to you soon, make sure to check your email because that’s where you will find us.
       </p>
-      <button className="rounded-full bg-[#1E1E1E] px-7 py-[10px] text-white">Back Home</button>
+      <button className="rounded-full bg-[#1E1E1E] px-7 py-[10px] text-white">
+        <Link href="/">Back Home</Link>
+      </button>
       <Image src="/imgs/inquiry/illustration.webp" alt="Thank you" width={566} height={566} />
     </section>
   );
