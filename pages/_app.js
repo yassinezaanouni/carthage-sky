@@ -1,11 +1,12 @@
+import "animate.css/animate.min.css";
+import Head from "next/head";
+import { Router } from "next/router";
+import nProgress from "nprogress";
+import { Toaster } from "react-hot-toast";
+import { ParallaxProvider } from "react-scroll-parallax";
 import Layout from "../components/Layout/Layout";
 import "../styles/globals.css";
 import "../styles/nprogress.css";
-import "animate.css/animate.min.css";
-import nProgress from "nprogress";
-import { Router } from "next/router";
-import { ParallaxProvider } from "react-scroll-parallax";
-import Head from "next/head";
 
 function MyApp({ Component, pageProps }) {
   Router.events.on("routeChangeStart", nProgress.start);
@@ -21,9 +22,21 @@ function MyApp({ Component, pageProps }) {
         />
         <link rel="icon" href="/icons/logo.svg" />
       </Head>
-      x
       <ParallaxProvider>
         <Layout>
+          <Toaster
+            position="top-center"
+            reverseOrder={false}
+            toastOptions={{
+              // Define default options
+              className: "",
+              duration: 2500,
+              style: {
+                background: "#fff",
+                color: "#000",
+              },
+            }}
+          />
           <Component {...pageProps} />
         </Layout>
       </ParallaxProvider>

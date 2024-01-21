@@ -8,7 +8,7 @@ import ProudOf from "./ProudOf";
 
 const IndexPage = () => {
   return (
-    <div>
+    <div className="overflow-x-hidden">
       <Hero />
       <ProudOf className="md:!mt-[8.75rem]" />
       <OurServices />

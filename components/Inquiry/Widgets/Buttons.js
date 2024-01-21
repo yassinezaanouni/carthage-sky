@@ -1,4 +1,5 @@
 import React from "react";
+import { toast } from "react-hot-toast";
 
 const Buttons = ({ state, setState, className }) => {
   return (
@@ -14,7 +15,8 @@ const Buttons = ({ state, setState, className }) => {
       <button
         className="rounded-full border border-primary-400 border-transparent bg-primary-400 py-3 !px-10 font-semibold text-white transition-all hover:!px-12"
         isColorInverse={true}
-        onClick={() => setState((prev) => prev + 1)}
+        // onClick={() => setState((prev) => prev + 1)}
+        onClick={() => toast.error("This is a demo application!")}
       >
         Next
       </button>

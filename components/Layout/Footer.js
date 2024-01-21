@@ -106,14 +106,16 @@ const Footer = () => {
         </div>
         <div className=" hidden flex-wrap gap-12 md:flex md:gap-20">
           <div>
-            <ul className="flex flex-col gap-4">
+            <h5 className="text-lg font-bold">Contact us:</h5>
+            <ul className="mt-6 flex flex-col gap-4">
               <li className="f-ai-c gap-4">
                 <Image
                   src="/icons/footer/email.svg"
-                  alt=""
+                  alt="email"
                   name="home"
                   width={23.86}
                   height={17.04}
+                  className="scale-[0.8]"
                 />
                 <Link href="mailto:cs@carthagesky.com" passHref>
                   <a target="_blank" rel="noopener noreferrer">
@@ -124,10 +126,11 @@ const Footer = () => {
               <li className="f-ai-c mt-2 gap-4">
                 <Image
                   src="/icons/footer/phone.svg"
-                  alt=""
+                  alt="phone"
                   name="home"
                   width={23.86}
                   height={23.91}
+                  className="scale-[0.8]"
                 />
 
                 <Link href="tel:+216 70 02 93 60">
@@ -137,10 +140,11 @@ const Footer = () => {
               <li className="f-ai-c mt-2 gap-4">
                 <Image
                   src="/icons/footer/map.svg"
-                  alt=""
+                  alt="map"
                   name="home"
                   width={23.86}
                   height={27.15}
+                  className="scale-[0.8]"
                 />
                 Find us in:
               </li>
@@ -165,7 +169,7 @@ const Footer = () => {
             </ul>
           </div>
           <div>
-            <h5 className="font-semibold">Discover Carthage Sky</h5>
+            <h5 className="text-lg font-bold">Discover Carthage Sky:</h5>
             <ul className="mt-6 flex flex-col gap-2">
               <li className="hover:underline">
                 <Link href="/about-us">About Us</Link>
@@ -205,12 +209,6 @@ const Footer = () => {
 
       <div className="container mt-5 text-center md:mt-20">
         <p>All rights reserved for Carthage Sky &#169; {getYear()}</p>
-        <p>
-          Made by
-          <Link href="https://innovant.studio/">
-            <a className="underline"> Innovant Studio</a>
-          </Link>
-        </p>
       </div>
     </footer>
   );

@@ -1,17 +1,27 @@
-import React from "react";
 import Image from "next/image";
+import React from "react";
 
 const TopBar = ({ state, className }) => {
   return (
-    <div className={`flex flex-wrap items-end justify-center gap-3 lg:items-center lg:justify-start ${className}`}>
+    <div
+      className={`flex flex-wrap items-end gap-3 lg:items-center lg:justify-start ${className}`}
+    >
       <Item title="Company info" value={1} state={state} />
-      <span className="font-semibold tracking-wider text-[#707070]">----------</span>
+      <span className="font-semibold tracking-wider text-[#707070]">
+        ----------
+      </span>
       <Item title="Owner/Officer" value={2} state={state} />
-      <span className="font-semibold tracking-wider text-[#707070]">----------</span>
+      <span className="font-semibold tracking-wider text-[#707070]">
+        ----------
+      </span>
       <Item title="Financial Information" value={3} state={state} />
-      <span className="font-semibold tracking-wider text-[#707070]">----------</span>
+      <span className="font-semibold tracking-wider text-[#707070]">
+        ----------
+      </span>
       <Item title="Trade References" value={4} state={state} />
-      <span className="font-semibold tracking-wider text-[#707070]">----------</span>
+      <span className="font-semibold tracking-wider text-[#707070]">
+        ----------
+      </span>
       <Item title="Terms" value={5} state={state} />
     </div>
   );
@@ -33,7 +43,13 @@ const Item = ({ title, value, state }) => {
         }`}
       >
         {isDone == 1 ? (
-          <Image src="/icons/inquiry/check.svg" width={21.22} height={13.63} alt="" layout="fixed" />
+          <Image
+            src="/icons/inquiry/check.svg"
+            width={21.22}
+            height={13.63}
+            alt=""
+            layout="fixed"
+          />
         ) : (
           value
         )}

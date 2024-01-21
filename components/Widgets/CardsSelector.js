@@ -1,39 +1,22 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/router";
+import { useState } from "react";
 const CardsSelector = ({ items, iconFolder }) => {
   const router = useRouter();
-  const [selectedServiceIndex, setSelctedServiceIndex] = useState(Number(router.query.selectedServiceIndex) || 0);
+  const [selectedServiceIndex, setSelctedServiceIndex] = useState(
+    Number(router.query.selectedServiceIndex) || 0
+  );
   const [description, setDescription] = useState({
     title: "Occupational Health & Safety",
     description: "",
   });
   return (
-    <div className="container">
-      {/* <textarea
-        className="border-2"
-        name=""
-        id=""
-        cols="30"
-        rows="10"
-        onChange={(e) =>
-          setDescription((prev) => {
-            return { ...prev, description: e.target.value };
-          })
-        }
-      ></textarea>
-      <button
-        onClick={() => {
-          console.log(description);
-        }}
-      >
-        hello
-      </button> */}
+    <div className=" flex flex-wrap justify-between gap-4 md:gap-8">
       <div
-        className="grid gap-5"
+        className="grid flex-1 md:min-w-[20rem] md:gap-7"
         style={{
-          gridTemplateColumns: "repeat(auto-fit, minmax(188px, 1fr))",
+          gridTemplateColumns: "repeat(auto-fit, minmax(120px, 1fr))",
         }}
       >
         {items.map((service, index) => (
@@ -51,15 +34,17 @@ const CardsSelector = ({ items, iconFolder }) => {
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
         key={selectedServiceIndex}
-        className="mt-16 border border-primary-400 px-[2rem] py-9 text-start md:mt-[5.5rem] md:py-16 md:px-[4rem] lg:px-[6.5rem]"
+        className=" min-w-[30ch] max-w-full flex-1 border border-primary-400 px-[1.5rem]  py-9 text-start md:min-w-[40rem] md:py-12 md:px-[2rem] lg:min-w-[50rem] lg:px-[4.5rem]"
       >
         <h3
           transition={{ duration: 0.5, ease: "easeInOut" }}
-          className="text-2xl font-bold text-primary-400 lg:text-[2.5rem]"
+          className="text-2xl font-bold leading-tight text-primary-400 lg:text-[2.5rem]"
         >
           {items[selectedServiceIndex]?.title}
         </h3>
-        <p className="mt-[1.925rem] whitespace-pre-line">{items[selectedServiceIndex]?.description}</p>
+        <p className="mt-[1.925rem] whitespace-pre-line">
+          {items[selectedServiceIndex]?.description}
+        </p>
       </motion.div>
     </div>
   );
@@ -74,11 +59,17 @@ export const Item = ({ iconFolder, index, title, onClick, isSelected }) => {
       className="group flex cursor-pointer flex-col items-center transition-all hover:text-primary-400"
     >
       <button
-        className={`f-ai-c h-[11rem] w-[11.75rem] justify-center rounded-lg border border-transparent bg-[#F5F5F5] p-2 group-hover:border-primary-400 group-hover:bg-[#E8F2FF] ${
+        className={`f-ai-c h-[7.75rem] w-[8rem] justify-center rounded-lg border border-transparent bg-[#F5F5F5] p-2 group-hover:border-primary-400 group-hover:bg-[#E8F2FF] ${
           isSelected ? "border-primary-400 bg-[#E8F2FF]" : ""
         }`}
       >
-        <Image src={`/icons/${iconFolder}/${index}.png`} alt="" name="service" width={90} height={90} />
+        <Image
+          src={`/icons/${iconFolder}/${index}.png`}
+          alt=""
+          name="service"
+          width={60}
+          height={60}
+        />
       </button>
       <h3 className="mt-3 text-lg">{title}</h3>
     </div>

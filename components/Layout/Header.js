@@ -1,16 +1,18 @@
-import Link from "next/link";
-import Button from "../Widgets/Button";
 import Image from "next/image";
-import { Fragment, useCallback, useEffect, useRef, useState } from "react";
+import Link from "next/link";
 import { useRouter } from "next/router";
-import SvgLogo from "../../public/svg-components/Logo";
-import Container from "./Container";
+import { useCallback, useEffect, useRef, useState } from "react";
+import Button from "../Widgets/Button";
 import Logo from "./Logo";
 
 const Header = () => {
   const router = useRouter();
   const changeNavState = () => {
     headerRef.current.classList.toggle("nav-open");
+  };
+
+  const closeNav = () => {
+    headerRef.current.classList.remove("nav-open");
   };
 
   // Scroll direction to change header size
@@ -42,7 +44,10 @@ const Header = () => {
     };
   }, [handleNavigation]);
   return (
-    <header ref={headerRef} className="py-6 font-semibold text-white transition-all   duration-300 ">
+    <header
+      ref={headerRef}
+      className=" py-6 font-semibold text-white transition-all duration-300"
+    >
       <div className="f-ai-c container justify-between gap-10 xl:gap-36">
         <Link href="/">
           <a>
@@ -50,27 +55,42 @@ const Header = () => {
           </a>
         </Link>
 
-        <nav className="f-ai-c  flex-1 gap-4 text-center lg:justify-between">
+        <nav className="f-ai-c flex-1 gap-4 text-center lg:justify-center">
           <ul className="f-ai-c gap-7">
-            <li className={router.pathname == "/" ? "active" : ""}>
+            <li
+              className={router.pathname == "/" ? "active" : ""}
+              onClick={closeNav}
+            >
               <Link href="/">Home</Link>
             </li>
-            <li className={router.pathname == "/services" ? "active" : ""}>
+            <li
+              className={router.pathname == "/services" ? "active" : ""}
+              onClick={closeNav}
+            >
               <Link href="/services">Our Services</Link>
             </li>
-            <li className={router.pathname == "/choose-us" ? "active" : ""}>
+            <li
+              className={router.pathname == "/choose-us" ? "active" : ""}
+              onClick={closeNav}
+            >
               <Link href="/choose-us">Why choose us</Link>
             </li>
-            <li className={router.pathname == "/about-us" ? "active" : ""}>
+            <li
+              className={router.pathname == "/about-us" ? "active" : ""}
+              onClick={closeNav}
+            >
               <Link href="/about-us">About us</Link>
             </li>
-            <li className={router.pathname == "/careers" ? "active" : ""}>
-              <Link href="/careers">Careers</Link>
-            </li>
           </ul>
-          <Button className="block lg:hidden ">
+          <Button className="block lg:hidden" onClick={closeNav}>
             <Link href="/inquiry">
-              <a className={`font-semibold ${router.pathname == "/inquirt" ? "active" : ""}`}>Send Inquiry</a>
+              <a
+                className={`font-semibold ${
+                  router.pathname == "/inquirt" ? "active" : ""
+                }`}
+              >
+                Send Inquiry
+              </a>
             </Link>
           </Button>
         </nav>
@@ -81,10 +101,22 @@ const Header = () => {
         </Button>
         <button className="nav-btn " onClick={changeNavState}>
           <div className="menu-outline z-30">
-            <Image src="/icons/header/menu-outline.svg" alt="" name="menu-outline" width={31} height={14} />
+            <Image
+              src="/icons/header/menu-outline.svg"
+              alt=""
+              name="menu-outline"
+              width={31}
+              height={14}
+            />
           </div>
           <div className="close-outline relative z-30">
-            <Image src="/icons/header/close-outline.svg" alt="" name="close-outline" width={35} height={35} />
+            <Image
+              src="/icons/header/close-outline.svg"
+              alt=""
+              name="close-outline"
+              width={35}
+              height={35}
+            />
           </div>
         </button>
       </div>
