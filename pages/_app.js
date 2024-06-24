@@ -15,7 +15,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <title>Cartaghe Sky </title>
+        <title>Carthage Sky </title>
         <meta
           name="description"
           content="We're here to make your experience owning, operating and managing an aircraft easier. We take care of the process and deliver cost-effective service so you can enjoy the benefits. You can expect full service for a smooth journey."
